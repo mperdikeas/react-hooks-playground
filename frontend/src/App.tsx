@@ -1,25 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useRef} from 'react';
 
 function App() {
+
+  let [n, set_n] = useState(0);
+  const m = useRef(0);
+  console.log(`component is rendering`);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div>value of n is {n}</div>
+      <div>value of m is {m.current}</div>
+      <div>
+        <button onClick={()=>{set_n(n=>n+1);}}>increment n</button>
+        <button onClick={()=>{m.current = m.current+1;}}>increment m</button>
+      </div>
+    </>
   );
 }
 
