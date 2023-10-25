@@ -6,7 +6,8 @@ import {
 } from 'react-router-dom';
 
 import {LandingPage} from './landing-page';
-import {UseStateVsUseRef} from './use-state-vs-use-ref';
+import {UseStateVsUseRef           } from './use-state-vs-use-ref';
+import {UseStateVsUseRefWtUseEffect}  from './use-state-vs-use-ref-wt-use-effect';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: '/use-state-vs-use-ref',
     element: <UseStateVsUseRef/>
+  },
+  {
+    path: '/use-state-vs-use-ref-wt-use-effect',
+    element: <UseStateVsUseRefWtUseEffect/>
   },
 ]);
 
