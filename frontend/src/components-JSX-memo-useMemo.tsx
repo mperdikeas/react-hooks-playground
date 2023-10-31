@@ -80,7 +80,7 @@ function CounterC() {
             <button onClick={()=>setCounter(counter+1)}>INC</button>
           </div>
           <button onClick={()=>set_key(key+1)}>change key of below component</button>
-          <ExpensiveComponentMemoized key={key}/>
+          <ExpensiveComponentMemoized key={key} id='memoized component'/>
       </div>
   );
 }
@@ -124,5 +124,17 @@ function expensive_function() {
   return max;
 }
 
-  
-const ExpensiveComponentMemoized = memo(()=><ExpensiveComponent id={'memoized component'}/>);
+/*
+ *
+ *    I initially had it like this but there's a simpler way
+ *
+ *    const ExpensiveComponentMemoized = memo(()=><ExpensiveComponent id={'memoized component'}/>);
+ *
+ * 
+ *    The only drawback of the below simpler way of memoizing the component is that it forces us to
+ *    pass the [id] at the place where the memoized component is used. I.e. the memoized component
+ *    has the exact same interface as the original component (this makes sense).
+ *
+ */
+
+const ExpensiveComponentMemoized = memo(ExpensiveComponent);
