@@ -9,7 +9,7 @@ import {LandingPage                } from './landing-page';
 import {UseStateVsUseRef           } from './use-state-vs-use-ref';
 import {UseStateVsUseRefWtUseEffect} from './use-state-vs-use-ref-wt-use-effect';
 import {UseEffectDemo              } from './use-effect-demo'; 
-import {PassingElementsAsJSX       } from './passing-elements-as-JSX';
+import {Components_JSX_Memo_UseMemo} from './components-JSX-memo-useMemo';
 
 const router = createBrowserRouter([
   {
@@ -29,8 +29,8 @@ const router = createBrowserRouter([
     element: <UseEffectDemo/>
   },  
   {
-    path: '/passing-elements-as-JSX',
-    element: <PassingElementsAsJSX/>
+    path: '/components-jsx-memo-useMemo',
+    element: <Components_JSX_Memo_UseMemo/>
   },  
 ]);
 

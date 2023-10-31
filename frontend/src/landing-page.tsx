@@ -13,7 +13,7 @@ export function LandingPage() {
         <Link to='/use-effect-demo'><b>useEffect</b> demo</Link>
       </div>
       <div>
-        <Link to='/passing-elements-as-JSX'>passing expensive elements as JSX demo</Link>
+        <Link to='/components-jsx-memo-useMemo'>components, JSX Elements, <b>memo</b> and <b>useMemo</b></Link>
       </div>
     </>
   );
