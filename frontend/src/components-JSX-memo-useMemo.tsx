@@ -1,4 +1,4 @@
-import React, {useState, memo, useMemo} from 'react';
+import React, {useState, memo, useMemo, useRef} from 'react';
 
 import {Link} from 'react-router-dom';
 
@@ -88,19 +88,24 @@ function CounterC() {
 
 
 function ExpensiveComponent({id}: {id: string}) {
+  const n = useRef(0);
+  n.current += 1;
   const preamble = `expensive component passed as [${id}] rendering`;
   console.log(`${preamble} start`);
   const max = expensive_function();
   console.log(`${preamble} finish`);
   return (
     <>
-        <div>expensive component (<b>{id}</b>)</div>
-        <div>value is: {max})</div>
+      <div>expensive component (<b>{id}</b>)</div>
+      <div>rendered <b>{n.current}</b> times thus far</div>
+      <div>value is: {max})</div>
     </>
   );
 }
 
 function ExpensiveComponentWtUseMemo({id}: {id: string}) {
+  const n = useRef(0);
+  n.current += 1;
   const preamble = `expensive component passed as [${id}] rendering`;
   console.log(`${preamble} start`);
   const max = useMemo(expensive_function, []);
@@ -108,6 +113,7 @@ function ExpensiveComponentWtUseMemo({id}: {id: string}) {
   return (
     <>
         <div>expensive component (<b>{id}</b>)</div>
+        <div>rendered <b>{n.current}</b> times thus far</div>
         <div>value is: {max}</div>
     </>
   );
