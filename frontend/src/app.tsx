@@ -9,7 +9,7 @@ import {LandingPage                } from './landing-page';
 import {UseStateVsUseRef           } from './use-state-vs-use-ref';
 import {UseStateVsUseRefWtUseEffect} from './use-state-vs-use-ref-wt-use-effect';
 import {UseEffectDemo              } from './use-effect-demo'; 
-
+import {PassingElementsAsJSX       } from './passing-elements-as-JSX';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: '/use-effect-demo',
     element: <UseEffectDemo/>
+  },  
+  {
+    path: '/passing-elements-as-JSX',
+    element: <PassingElementsAsJSX/>
   },  
 ]);
 
